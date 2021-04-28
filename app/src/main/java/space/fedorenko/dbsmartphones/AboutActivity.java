@@ -30,7 +30,7 @@ public class AboutActivity extends AppCompatActivity {
                 .addEmail("fedorenko.max02@knu.ua")
                 .addFacebook("redartelerist")
                 .addInstagram("red_artelerist")
-                .addGitHub("RedArtelerist/MatrixCalculator")
+                .addGitHub("RedArtelerist/DbSmartphones")
                 .addItem(createCopyright())
                 .create();
 
