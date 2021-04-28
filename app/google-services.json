@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "895153286456",
+    "project_id": "smartphone-database",
+    "storage_bucket": "smartphone-database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:895153286456:android:58a4a49bb640b03530a5cd",
+        "android_client_info": {
+          "package_name": "space.fedorenko.dbsmartphones"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "895153286456-4t62k5gbh7f63ev83ul5sojfbsp8gm26.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAU9IZeFSOsdVFY0xEHnB7pmOz7vxh_Kwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "895153286456-4t62k5gbh7f63ev83ul5sojfbsp8gm26.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
