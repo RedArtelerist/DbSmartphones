@@ -17,7 +17,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,8 +31,12 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+
+import space.fedorenko.dbsmartphones.smartphone.AutoCompleteCompanyAdapter;
+import space.fedorenko.dbsmartphones.smartphone.CompanyItem;
+import space.fedorenko.dbsmartphones.smartphone.Smartphone;
+import space.fedorenko.dbsmartphones.smartphone.SmartphoneAdapter;
 
 public class SmartphoneActivity extends AppCompatActivity implements SmartphoneAdapter.OnItemClickListener {
     private RecyclerView recyclerView;
@@ -134,7 +137,7 @@ public class SmartphoneActivity extends AppCompatActivity implements SmartphoneA
     @Override
     public void onEditClick(int position) {
         Smartphone selectedItem = smartphones.get(position);
-        Intent intent = new Intent(this, UpdateSmartphone.class);
+        Intent intent = new Intent(this, UpdateSmartphoneActivity.class);
 
         intent.putExtra("key", selectedItem.getKey());
         intent.putExtra("image", selectedItem.getImageUrl());

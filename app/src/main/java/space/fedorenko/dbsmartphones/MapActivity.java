@@ -139,7 +139,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
                 marker1.title("Current Position");
                 mCurrLocationMarker = mGoogleMap.addMarker(marker1);
 
-                //move map camera
                 mGoogleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 5));
 
                 if(marker1 != null && marker2 != null){

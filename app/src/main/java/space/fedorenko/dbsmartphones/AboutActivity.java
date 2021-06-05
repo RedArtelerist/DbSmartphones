@@ -17,6 +17,7 @@ public class AboutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+        setTitle("About");
 
         Element versionElement = new Element();
         versionElement.setTitle("Version 1.1");
@@ -24,7 +25,7 @@ public class AboutActivity extends AppCompatActivity {
         View aboutPage = new AboutPage(this)
                 .isRTL(false)
                 .setImage(R.mipmap.ic_db_smartphones)
-                .setDescription("This is smartphones application\nLaboratory work #2\nmade by a student of the Faculty of Cybernetics\nFedorenko Maksym")
+                .setDescription("This is combined application\nwhich contains Laboratory work #1 and #2\nmade by a student of the Faculty of Cybernetics\nFedorenko Maksym")
                 .addItem(versionElement)
                 .addGroup("Connect with us")
                 .addEmail("fedorenko.max02@knu.ua")

@@ -1,4 +1,4 @@
-package space.fedorenko.dbsmartphones;
+package space.fedorenko.dbsmartphones.smartphone;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import space.fedorenko.dbsmartphones.R;
 
 public class AutoCompleteCompanyAdapter extends ArrayAdapter<CompanyItem> {
     private List<CompanyItem> countryListFull;

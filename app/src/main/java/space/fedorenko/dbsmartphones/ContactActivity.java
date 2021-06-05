@@ -8,10 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
@@ -20,6 +18,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import space.fedorenko.dbsmartphones.smartphone.ContactAdapter;
+import space.fedorenko.dbsmartphones.smartphone.ContactModel;
 
 public class ContactActivity extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -83,12 +84,6 @@ public class ContactActivity extends AppCompatActivity {
                     int id = Integer.parseInt(phone_cursor.getString(
                             phone_cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.CONTACT_ID)
                     ));
-
-                    /*Cursor name_cursor = getContentResolver().query(
-                            ContactsContract.Data.CONTENT_URI, null,
-                            ContactsContract.Data.CONTACT_ID + "  = " + id,
-                            null, null
-                    );*/
 
                     Cursor name_cursor = getContentResolver().query(
                             ContactsContract.Data.CONTENT_URI, null,

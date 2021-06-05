@@ -1,4 +1,4 @@
-package space.fedorenko.dbsmartphones;
+package space.fedorenko.dbsmartphones.smartphone;
 
 public class ContactModel {
     String name, phone;

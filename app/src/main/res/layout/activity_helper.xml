@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/AppHelper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Application Helper"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/hlpMatrixBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/gray"
+                android:text="Matrix Calculator" />
+
+            <LinearLayout
+                android:id="@+id/helperMatrix"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/m1"
+                    android:maxLines="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/m1" />
+
+                <TextView
+                    android:id="@+id/m2"
+                    android:maxLines="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/m2" />
+
+                <ImageView
+                    android:id="@+id/imgMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/matrix_main" />
+
+                <TextView
+                    android:id="@+id/m3"
+                    android:maxLines="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/m3" />
+
+                <TextView
+                    android:id="@+id/m4"
+                    android:maxLines="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/m4" />
+
+                <TextView
+                    android:id="@+id/m5"
+                    android:maxLines="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/m5" />
+
+                <TextView
+                    android:id="@+id/m6"
+                    android:maxLines="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/m6" />
+
+                <TextView
+                    android:id="@+id/m7"
+                    android:maxLines="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/m7" />
+
+                <TextView
+                    android:id="@+id/m8"
+                    android:maxLines="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/m8" />
+
+                <TextView
+                    android:id="@+id/m9"
+                    android:maxLines="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/m9" />
+
+                <TextView
+                    android:id="@+id/m10"
+                    android:maxLines="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/m10" />
+
+                <TextView
+                    android:id="@+id/m11"
+                    android:maxLines="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/m11" />
+
+                <TextView
+                    android:id="@+id/m12"
+                    android:maxLines="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/m12" />
+
+                <TextView
+                    android:id="@+id/m13"
+                    android:maxLines="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/m13" />
+
+                <TextView
+                    android:id="@+id/m14"
+                    android:maxLines="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/m14" />
+
+                <TextView
+                    android:id="@+id/m15"
+                    android:maxLines="5"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/m15" />
+
+                <ImageView
+                    android:id="@+id/imgRes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/matrix_res" />
+
+                <TextView
+                    android:id="@+id/m16"
+                    android:maxLines="5"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/m16" />
+
+                <ImageView
+                    android:id="@+id/imgHelpFunction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/matrix_helper" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/hlpSmartBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/gray"
+                android:text="Smartphone Database" />
+
+            <LinearLayout
+                android:id="@+id/helperSmartphone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/s1"
+                    android:maxLines="5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/s1" />
+
+                <TextView
+                    android:id="@+id/s2"
+                    android:maxLines="5"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/s2" />
+
+                <ImageView
+                    android:id="@+id/smart_img1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/smart_create" />
+
+                <TextView
+                    android:id="@+id/s3"
+                    android:maxLines="5"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/s3" />
+
+                <ImageView
+                    android:id="@+id/smart_img2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/smart_auto" />
+
+                <TextView
+                    android:id="@+id/s4"
+                    android:maxLines="5"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/s4" />
+
+                <ImageView
+                    android:id="@+id/smart_img3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/smart_validation" />
+
+                <TextView
+                    android:id="@+id/s5"
+                    android:maxLines="5"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/s5" />
+
+                <ImageView
+                    android:id="@+id/smart_img4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/list_smart" />
+
+                <TextView
+                    android:id="@+id/s6"
+                    android:maxLines="5"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/s6" />
+
+                <ImageView
+                    android:id="@+id/smart_img5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/smart_route" />
+
+                <TextView
+                    android:id="@+id/s7"
+                    android:maxLines="5"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/s7" />
+
+                <ImageView
+                    android:id="@+id/smart_img6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/smart_del" />
+
+                <TextView
+                    android:id="@+id/s8"
+                    android:maxLines="5"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/s8" />
+
+                <ImageView
+                    android:id="@+id/smart_img7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/smart_contacts" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

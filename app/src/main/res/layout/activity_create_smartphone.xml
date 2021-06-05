@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UpdateSmartphoneActivity">
+    tools:context=".CreateSmartphoneActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Update Smartphone"
+                android:text="Create Smartphone"
                 android:textColor="@color/bg_black1"
                 android:textSize="100px" />
 
@@ -32,10 +32,10 @@
                 android:src="@drawable/no_image" />
 
             <Button
-                android:id="@+id/btnReplaceImage"
+                android:id="@+id/btnChooseImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Replace image" />
+                android:text="Choose image" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/inputCompany"
@@ -166,23 +166,31 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnUpdate"
+                    android:id="@+id/contacts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
                     android:layout_marginBottom="6dp"
-                    android:text="UPDATE" />
+                    android:layout_marginEnd="8dp"
+                    android:text="Contacts" />
+
+                <Button
+                    android:id="@+id/btnCreate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:text="CREATE" />
 
                 <TextView
-                    android:id="@+id/back"
+                    android:id="@+id/showItems"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginEnd="15dp"
                     android:layout_marginBottom="6dp"
                     android:gravity="center"
-                    android:text="Back"
+                    android:text="Show Items"
                     android:textSize="16sp" />
             </LinearLayout>
 

@@ -1,4 +1,4 @@
-package space.fedorenko.dbsmartphones;
+package space.fedorenko.dbsmartphones.smartphone;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import space.fedorenko.dbsmartphones.R;
 
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHolder> {
     Activity activity;

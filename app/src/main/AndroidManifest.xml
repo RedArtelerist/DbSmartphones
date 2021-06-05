@@ -14,15 +14,19 @@
         android:roundIcon="@mipmap/ic_db_smartphones_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DbSmartphones">
-        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".HelperActivity"></activity>
+        <activity android:name=".CreateSmartphoneActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key" />
 
+        <activity android:name=".MatrixActivity" />
+        <activity android:name=".MatrixHelperActivity" />
+        <activity android:name=".AboutActivity" />
         <activity android:name=".ContactActivity" />
         <activity android:name=".MapActivity" />
-        <activity android:name=".UpdateSmartphone" />
+        <activity android:name=".UpdateSmartphoneActivity" />
         <activity android:name=".SmartphoneActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

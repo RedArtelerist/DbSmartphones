@@ -33,11 +33,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class UpdateSmartphone extends AppCompatActivity {
+import space.fedorenko.dbsmartphones.smartphone.AutoCompleteCompanyAdapter;
+import space.fedorenko.dbsmartphones.smartphone.CompanyItem;
+import space.fedorenko.dbsmartphones.smartphone.Smartphone;
+
+public class CreateSmartphoneActivity extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
-    private Button btnReplaceImage;
-    private Button btnUpdate;
-    private TextView back;
+    private Button btnChooseImage, btnCreate, btnContacts;
+    private TextView showItems;
 
     private List<CompanyItem> companyList;
 
@@ -50,48 +53,29 @@ public class UpdateSmartphone extends AppCompatActivity {
     private ImageView imageView;
     private ProgressBar progressBar;
     private Uri imageUri;
-    private String image;
 
     private StorageReference storageRef;
     private DatabaseReference databaseRef;
-    private StorageTask updateTask;
-
+    private StorageTask uploadTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_smartphone);
-        setTitle("Update");
+        setContentView(R.layout.activity_create_smartphone);
+        setTitle("Create");
 
-        btnReplaceImage = findViewById(R.id.btnReplaceImage);
-        btnUpdate = findViewById(R.id.btnUpdate);
-        back = findViewById(R.id.back);
-
-        String key = getIntent().getStringExtra("key");
-        image = getIntent().getStringExtra("image");
-        String company = getIntent().getStringExtra("company");
-        String model = getIntent().getStringExtra("model");
-        String screen = getIntent().getStringExtra("screen");
-        String price = getIntent().getStringExtra("price");
-        String address = getIntent().getStringExtra("address");
+        btnChooseImage = findViewById(R.id.btnChooseImage);
+        btnCreate = findViewById(R.id.btnCreate);
+        btnContacts = findViewById(R.id.contacts);
+        showItems = findViewById(R.id.showItems);
 
         inputCompany = findViewById(R.id.inputCompany);
-        inputCompany.getEditText().setText(company);
-
         inputModel = findViewById(R.id.inputModel);
-        inputModel.getEditText().setText(model);
-
         inputScreen = findViewById(R.id.inputScreen);
-        inputScreen.getEditText().setText(screen);
-
         inputPrice = findViewById(R.id.inputPrice);
-        inputPrice.getEditText().setText(price);
-
         inputAddress = findViewById(R.id.inputAddress);
-        inputAddress.getEditText().setText(address);
 
         imageView = findViewById(R.id.image);
-        Picasso.get().load(image).into(imageView);
         progressBar = findViewById(R.id.progress_bar);
 
         storageRef = FirebaseStorage.getInstance().getReference("uploads");
@@ -102,27 +86,33 @@ public class UpdateSmartphone extends AppCompatActivity {
         AutoCompleteCompanyAdapter adapter = new AutoCompleteCompanyAdapter(this, companyList);
         textCompany.setAdapter(adapter);
 
-        btnReplaceImage.setOnClickListener(new View.OnClickListener() {
+        btnChooseImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openFileChooser();
             }
         });
-        btnUpdate.setOnClickListener(new View.OnClickListener() {
+        btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (updateTask != null && updateTask.isInProgress()) {
-                    Toast.makeText(UpdateSmartphone.this, "Update in progress", Toast.LENGTH_SHORT).show();
+                if (uploadTask != null && uploadTask.isInProgress()) {
+                    Toast.makeText(CreateSmartphoneActivity.this, "Upload in progress", Toast.LENGTH_SHORT).show();
                 } else {
                     if(checkFields())
-                        updateSmartphone(key);
+                        uploadSmartphone();
                 }
             }
         });
-        back.setOnClickListener(new View.OnClickListener() {
+        showItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish(); return;
+                openSmartphoneActivity();
+            }
+        });
+        btnContacts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openContactsActivity();
             }
         });
     }
@@ -142,7 +132,6 @@ public class UpdateSmartphone extends AppCompatActivity {
         companyList.add(new CompanyItem("Motorola", R.drawable.motorola_logo));
         companyList.add(new CompanyItem("HTC", R.drawable.htc_logo));
         companyList.add(new CompanyItem("Nokia", R.drawable.nokia_logo));
-
     }
 
     private void openFileChooser() {
@@ -249,12 +238,12 @@ public class UpdateSmartphone extends AppCompatActivity {
         return mime.getExtensionFromMimeType(cR.getType(uri));
     }
 
-    private void updateSmartphone(String key) {
+    private void uploadSmartphone() {
         if (imageUri != null) {
             StorageReference fileReference = storageRef.child(System.currentTimeMillis()
                     + "." + getFileExtension(imageUri));
 
-            updateTask = fileReference.putFile(imageUri)
+            uploadTask = fileReference.putFile(imageUri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -268,7 +257,7 @@ public class UpdateSmartphone extends AppCompatActivity {
                                             progressBar.setProgress(0);
                                         }
                                     }, 500);
-                                    Toast.makeText(UpdateSmartphone.this, "Update successful", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(CreateSmartphoneActivity.this, "Upload successful", Toast.LENGTH_LONG).show();
                                     Smartphone smartphone = new Smartphone(
                                             inputCompany.getEditText().getText().toString(),
                                             inputModel.getEditText().getText().toString(),
@@ -278,7 +267,8 @@ public class UpdateSmartphone extends AppCompatActivity {
                                             uri.toString()
                                     );
 
-                                    databaseRef.child(key).setValue(smartphone);
+                                    String uploadId = databaseRef.push().getKey();
+                                    databaseRef.child(uploadId).setValue(smartphone);
                                 }
                             });
                         }
@@ -286,7 +276,7 @@ public class UpdateSmartphone extends AppCompatActivity {
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(UpdateSmartphone.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CreateSmartphoneActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     })
                     .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
@@ -297,24 +287,17 @@ public class UpdateSmartphone extends AppCompatActivity {
                         }
                     });
         } else {
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    progressBar.setProgress(0);
-                }
-            }, 500);
-            Toast.makeText(UpdateSmartphone.this, "Update successful", Toast.LENGTH_LONG).show();
-            Smartphone smartphone = new Smartphone(
-                    inputCompany.getEditText().getText().toString(),
-                    inputModel.getEditText().getText().toString(),
-                    Double.parseDouble(inputScreen.getEditText().getText().toString()),
-                    Integer.parseInt(inputPrice.getEditText().getText().toString()),
-                    inputAddress.getEditText().getText().toString(),
-                    image
-            );
-
-            databaseRef.child(key).setValue(smartphone);
+            Toast.makeText(this, "No file selected", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void openSmartphoneActivity() {
+        Intent intent = new Intent(this, SmartphoneActivity.class);
+        startActivity(intent);
+    }
+
+    private void openContactsActivity() {
+        Intent intent = new Intent(this, ContactActivity.class);
+        startActivity(intent);
     }
 }

@@ -1,3 +1,66 @@
 <resources>
     <string name="app_name">DbSmartphones</string>
+    <string name="matrA">Matrix A</string>
+    <string name="matrB">Matrix B</string>
+    <string name="set">Set</string>
+    <string name="rows">Rows:</string>
+    <string name="cols">Cols:</string>
+    <string name="result">Result C:</string>
+
+    <!--Operation button strings-->
+    <string name="add">A + B</string>
+    <string name="subtract">A - B</string>
+    <string name="subtract2">B - A</string>
+    <string name="multiply">A * B</string>
+    <string name="multiply2">B * A</string>
+
+    <string name="swap1">Swap A B</string>
+    <string name="swap2">Swap B C</string>
+    <string name="swap3">Swap A C</string>
+    <string name="inv">Inverse</string>
+    <string name="trans">Transpose</string>
+    <string name="scalar">Scale</string>
+
+    <string name="det">Det</string>
+    <string name="rank">Rank</string>
+
+
+    <!-- Error strings-->
+    <string name="sizeInvalid">Matrix size invalid.</string>
+    <string name="wrongSize">Matrices must be of the same size to perform this operation.</string>
+    <string name="mulFail">Columns of matrix 1 should equal rows of matrix 2.</string>
+    <string name="missingCells">Fill in all cells before performing an operation.</string>
+    <string name="about">About</string>
+    <string name="helper">Helper</string>
+    <string name="settings">Settings</string>
+    <string name="operAbout1">1. To add and subtract matrices, they must be of the same size</string>
+    <string name="operAbout2">2. To multiply matrices, the number of columns of matrix A must be equal to the number of rows of B</string>
+    <string name="detAbout">The determinant is found only for a square matrix</string>
+    <string name="inverseAbout">Inverse matrix is found only for a square matrix</string>
+    <string name="m1">This part of the application implements a matrix calculator that implements the basic functions for working with matrices.</string>
+    <string name="m2">You are greeted by the main page of the matrix calculator.</string>
+    <string name="m3">1. Save matrix to text file</string>
+    <string name="m4">2. Load matrix from file</string>
+    <string name="m5">3. Choosing the dimension of the matrix</string>
+    <string name="m6">4. Clean the matrix</string>
+    <string name="m7">5. Swap matrices</string>
+    <string name="m8">6. Add two matrices</string>
+    <string name="m9">7. Subtract two matrices</string>
+    <string name="m10">8. Multiply two matrices</string>
+    <string name="m11">9. Select a matrix on which operations will be carried out</string>
+    <string name="m12">10. Transport the matrix</string>
+    <string name="m13">11. Find Inverse matrix</string>
+    <string name="m14">12. Find determinant of a matrix</string>
+    <string name="m15">This is what the window of the result of one of the operations looks like.</string>
+    <string name="m16">You can also refer to the helper for the basics for working with matrices.</string>
+    <string name="s1">This part of the application is responsible for working with the smartphone database and phone book.</string>
+    <string name="s2">First, we are greeted by a form for adding a new smartphone, in which we need to select a picture, fill in the fields of model, company, screen diagonal, warehouse address and price.</string>
+    <string name="s3">There is a hint for the company field.</string>
+    <string name="s4">There is also validation for each field.</string>
+    <string name="s5">Next, we can view all smartphones previously added to the database. We can filter by company and screen, and also display the average diagonal of all smartphones.</string>
+    <string name="s6">We can build a route between our current location and the warehouse address of this smartphone.</string>
+    <string name="s7">We can also edit and delete the smartphone from the database.</string>
+    <string name="s8">We can also see the entire list of contacts from our smartphone and sort it by last name size</string>
+
+
 </resources>

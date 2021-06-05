@@ -1,4 +1,4 @@
-package space.fedorenko.dbsmartphones;
+package space.fedorenko.dbsmartphones.smartphone;
 
 import android.content.Context;
 import android.view.ContextMenu;
@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import space.fedorenko.dbsmartphones.R;
 
 public class SmartphoneAdapter extends RecyclerView.Adapter<SmartphoneAdapter.SmartphoneViewHolder> {
     private final Context mContext;
